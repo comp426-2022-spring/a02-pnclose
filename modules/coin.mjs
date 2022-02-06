@@ -8,7 +8,6 @@
  * 
  * @param {*}
  * @returns {string} 
- * 
  * example: coinFlip()
  * returns: heads
  * 
