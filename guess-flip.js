@@ -13,12 +13,11 @@ var parameterInput = minimist(process.argv.slice(2));
 var call = parameterInput['call']
 
 // If nothing show error
-if(call.length == 0) {
+if(call != 'heads' && call != 'tails') {
     console.log('Error: no input.')
+    console.log('Usage: node guess-flip --call=[heads|tails]');
 } else {
-    // If name is not either heads or tails show error
-    if(call != 'heads' && call != 'tails') console.log("Usage: node guess-flip --call=[heads|tails]");
-
-    // Log result
     console.log(flipACoin(call))
 }
+
+
