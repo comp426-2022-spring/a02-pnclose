@@ -64,6 +64,9 @@ function countFlips(flips) {
     if (flips[i] == 'heads') hCnt++
     if (flips[i] == 'tails') tCnt++
   }
+
+  if(hCnt == 0) return {tails: tails}
+  if(tCnt == 0) return {heads: heads}
   return 'tails: ' + tCnt + ', heads: ' + hCnt
 }
 
@@ -80,10 +83,13 @@ function countFlips(flips) {
 
 function flipACoin(call) {
   let res = coinFlip()
+  var ans;
   if(call == res) {
-    return 'call: ' + call + ', flip: ' + res + ', result: ' + 'win'
+    ans = 'win'
+  } else {
+    ans = 'lose'
   }
-  return 'call: ' + call + ', flip: ' + res + ', result: ' + 'lose'
+  return { call: call, flip: res, result: ans }
 }
 
 
