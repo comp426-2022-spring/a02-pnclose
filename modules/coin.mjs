@@ -92,6 +92,7 @@ function flipACoin(call) {
   let res = coinFlip()
   var result;
   if(call == res) {
+    
     result = 'win'
   } else {
     result = 'lose'
