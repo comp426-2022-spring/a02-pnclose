@@ -67,7 +67,7 @@ function countFlips(flips) {
 
   if(hCnt == 0) return {tails: tails}
   if(tCnt == 0) return {heads: heads}
-  return 'tails: ' + tCnt + ', heads: ' + hCnt
+  return { heads: heads, tails: tails }
 }
 
 /** Flip a coin!
