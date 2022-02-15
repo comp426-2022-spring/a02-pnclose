@@ -83,13 +83,13 @@ function countFlips(flips) {
 
 function flipACoin(call) {
   let res = coinFlip()
-  var ans;
+  var result;
   if(call == res) {
-    ans = 'win'
+    result = 'win'
   } else {
-    ans = 'lose'
+    result = 'lose'
   }
-  return { call: call, flip: res, result: ans }
+  return { call: call, flip: res, result: result }
 }
 
 
