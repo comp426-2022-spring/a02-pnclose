@@ -2,25 +2,23 @@
 import minimist from "minimist";
 
 // Import Coin Object to access coin.mjs functions
-import * as Coin from "./modules/coin.mjs";
+import { countFlips, coinFlips } from "./modules/coin.mjs";
 
 // Use minimist to get input
-var parameterInput = (process.argv.slice(2));
+var parameterInput = minimist(process.argv.slice(2));
+parameterInput['number']
+
 
 // Find substring
 // - - n u m b e r = 1  0 null
 // 0 1 2 3 4 5 6 7 8 9 10 11
-var num = String(parameterInput).substring(9, 11); // substring is exclusive 
-let arr = []
-if(num.length == 0) num++
+var num = parameterInput.number || 1
 
-// Populate array
-for(var i = 0; i<num; i++) {
-    arr[i] = Coin.coinFlip()
-}
+let arr = coinFlips(num)
+
 
 // Log to console
 console.log(arr)
-console.log(Coin.countFlips(arr))
+console.log(countFlips(arr))
 
 
